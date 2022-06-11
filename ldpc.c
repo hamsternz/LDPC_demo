@@ -390,7 +390,7 @@ int process_keys(struct state *s) {
 
       case KEY_UP:     s->channel[s->cursor] = floor(s->channel[s->cursor]*100)/100; 
                        if(s->channel[s->cursor] > 0.01)
-                          s->channel[s->cursor] -= 0.01;
+                          s->channel[s->cursor] -= 0.01001;
                        else
                           s->channel[s->cursor] = 0.01;
                        state_solve(s);
@@ -398,7 +398,7 @@ int process_keys(struct state *s) {
 
       case KEY_DOWN:   s->channel[s->cursor] = floor(s->channel[s->cursor]*100)/100;
                        if(s->channel[s->cursor] < 0.99)
-                          s->channel[s->cursor] += 0.01;
+                          s->channel[s->cursor] += 0.01001;
                        else
                           s->channel[s->cursor] = 0.99;
                        state_solve(s);
